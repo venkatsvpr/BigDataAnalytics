@@ -1,0 +1,16 @@
+am	1
+are	1
+bug	3
+cat	1
+fine	2
+fox	2
+guide	1
+hello	2
+how	1
+i	2
+kill	3
+syntax	1
+thin	1
+welcome	2
+world	2
+you	1
