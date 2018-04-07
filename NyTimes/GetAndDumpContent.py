@@ -21,6 +21,8 @@ for name in file_names:
 
     for item in range(len(frame_data['response']['docs'])):
         html = frame_data['response']['docs'][item]['web_url']
+        if ("http" not in html):
+            continue;
         try: f = urllib2.urlopen(html)
         except URLError as e:
             print ("url with error "+html)

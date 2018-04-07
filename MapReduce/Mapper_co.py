@@ -48,7 +48,7 @@ def tokenize(s):
 
 punctuation = list(string.punctuation)
 stop = stopwords.words('english') + punctuation + ['RT', 'via']
-
+freq_words  = ["facebook","trump","media","president","social","public","cambridge","users" ,"scandal","campaign", "voters","election","influence"]
 import sys
 for line in sys.stdin:
     if (len(line) == 0):
