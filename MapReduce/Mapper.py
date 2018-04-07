@@ -47,7 +47,7 @@ def tokenize(s):
     return tokens
 
 punctuation = list(string.punctuation)
-stop = stopwords.words('english') + punctuation + ['RT', 'via', 'new' , 'york' , 'one' , 'like' , 'would','also','us','ms','page','think','time', 'first','last','get','even','subscribe','days','city','mr','years','year','p']
+stop = stopwords.words('english') + punctuation + ['rt','RT', 'via', 'new' , 'york' , 'one' , 'like' , 'would','also','us','ms','page','think','time', 'first','last','get','even','subscribe','days','city','mr','years','year','p','amp','man','video','live','please','love','much']
 
 import sys
 for line in sys.stdin:

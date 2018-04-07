@@ -4,7 +4,7 @@ import re
 import pandas as pd
 from nltk.corpus import stopwords,wordnet
 import string
-
+import sys
 emoticons_str = r"""
     (?:
         [:=;] # Eyes
@@ -48,14 +48,16 @@ def tokenize(s):
 
 punctuation = list(string.punctuation)
 stop = stopwords.words('english') + punctuation + ['RT', 'via']
-freq_words  = ["facebook","trump","media","president","social","public","cambridge","users" ,"scandal","campaign", "voters","election","influence"]
-import sys
+#freq_words  = ["facebook","trump","media","president","social","public","cambridge","users" ,"scandal","campaign", "voters","election","influence"]
+#freq_words_ny = ["said" , "people", "facebook", "times", "trump", "please",  "many", "could", "see","two", "company", "twitter", "president", "day", "news" ]
+freq_words = ["facebook","financial","aid","data","office","stole","howard","tyrone","hankerson","student-employee","twitter","news","google","want","information"]
 for line in sys.stdin:
     if (len(line) == 0):
         continue;
     line = line.strip()
     line = line.lower();
     new_line = [term for term in tokenize(line) if not term in stop]
+    d = dict()
     for word in new_line:
         if word in freq_words:
             d[word] = True
