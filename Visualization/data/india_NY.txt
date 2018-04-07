@@ -1,0 +1,14 @@
+Word	Freq
+Hello	23
+world	33
+happen	14
+want	1
+more	3
+from	78
+me	44
+he	3
+hates	22
+animals	1
+than	9
+his	33
+indiany	10
