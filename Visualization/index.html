@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Word Cloud</title>
+ 
+  </head>
+  <body>
+
+    <div class="container">
+      <h3> Word Cloud </h3>
+      <select id="pick" name="pick" onchange="load_data()">
+        <option value="select">Select Data</option>
+        <option value="facebook">Facebook</option>
+        <option value="india">India</option>
+        <option value="trump">Trump</option>       
+      </select>
+
+      <div id="word-cloud-NY"></div>
+      <div id="word-cloud-TR"></div>
+     
+    </div>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/d3.layout.cloud.js"></script>
+    <script src="js/medley.js"></script>
+  </body>
+</html>
