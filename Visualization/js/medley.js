@@ -13,8 +13,8 @@ function load_data()
   {
 
       case "facebook":
-                      file1="facebook_NY.txt";
-                      file2="facebook_TR.txt";                      
+                     file1="india_NY.txt";
+                     file2="facebook_TR.txt";                      
                       break;
       case "india":
                       file1="india_NY.txt";
@@ -28,7 +28,7 @@ function load_data()
                       file1="NA";
                       file2="NA";
   }
-
+  console.log("line2")
 
   var width = 400,
   height = 400,
@@ -42,12 +42,14 @@ function load_data()
   d3.tsv("./data/" + file1, function(data){
 
     leaders.push({text: data.Word, size: data.Freq});
+    //console.log(leaders)
 
     leaderscale.domain([
         d3.min(leaders,function(d) {return d.size;}),
         d3.max(leaders,function(d) {return d.size;})        
       ]);    
 
+    //console.log(leaders.length);
     if(leaders.length==show_data)
     {      
         layout = d3.layout.cloud()
@@ -67,6 +69,8 @@ function load_data()
   d3.tsv("./data/" + file2, function(data){
 
     leaders1.push({text: data.Word, size: data.Freq});
+
+   // console.log(leaders1)
 
     leaderscale.domain([
         d3.min(leaders1,function(d) {return d.size;}),
@@ -90,6 +94,7 @@ function load_data()
   }); 
 
   function draw(words) {
+    console.log("In draw")
 
   d3.select("#word-cloud-NY").append("svg")
       .attr("width", layout.size()[0])
@@ -110,7 +115,7 @@ function load_data()
   }
 
   function draw1(words) {
-
+console.log("In draw1")
   d3.select("#word-cloud-TR").append("svg")
       .attr("width", layout.size()[0])
       .attr("height", layout.size()[1])
