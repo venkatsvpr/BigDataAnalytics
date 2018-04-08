@@ -3,7 +3,7 @@ Bigdata Analytics with MapReduce
 
 
 #Directory Structures:
-Part1 - Contains the part-1 of the project.
+Part1 - Contains the part-1 of the project.<br />
 |--- Ch3/Ch4/Ch5 - Contains the python code for Chapter3/4/5
 
 Part2 - Contains the part-2 of the project
