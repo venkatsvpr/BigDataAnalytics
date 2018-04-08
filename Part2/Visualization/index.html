@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Word Cloud</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"> 
+  </head>
+  <body>
+
+    <div class="container">
+      <br>
+      <span class="label label-primary">Big Data Visualization : </span>
+      
+
+      <select id="pick" name="pick">
+        <option value="facebook">Facebook</option>
+        <option value="india">India</option>
+        <option value="trump">Trump</option>       
+      </select>  
+
+      <select id="count" name="count">
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>              
+      </select>  
+
+      <button id="submit" class="btn btn-primary btn-sm" onclick="load_data()"> Show Results </button>
+
+    </div>
+    <br>
+    <div class="container">     
+
+      <div class="btn btn-info btn-sm block" >New York Times</div>
+      <div class="btn btn-info btn-sm block">Twitter</div>
+      <br>
+      <div id="word-cloud-NY" class="block"></div>
+      <div id="word-cloud-TR" class="block"></div>
+     
+     
+    </div>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/d3.layout.cloud.js"></script>
+    <script src="js/medley.js"></script>
+  </body>
+</html>
