@@ -11,7 +11,7 @@ times	15104
 would   14707
 also    11478
 us      11410
-trump   10593
+	10593
 ms      10389
 page    10116
 think   10110

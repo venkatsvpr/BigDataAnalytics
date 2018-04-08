@@ -47,7 +47,7 @@ def tokenize(s):
     return tokens
 
 punctuation = list(string.punctuation)
-stop = stopwords.words('english') + punctuation + ['RT', 'via']
+stop = stopwords.words('english') + punctuation + ['rt','RT', 'via', 'new' , 'york' , 'one' , 'like' , 'would','also','us','ms','page','think','time', 'first','last','get','even','subscribe','days','city','mr','years','year','p','amp','man','video','live','please','love','much','could', 'u']
 #freq_words  = ["facebook","trump","media","president","social","public","cambridge","users" ,"scandal","campaign", "voters","election","influence"]
 #freq_words_ny = ["said" , "people", "facebook", "times", "trump", "please",  "many", "could", "see","two", "company", "twitter", "president", "day", "news" ]
 freq_words = ["facebook","financial","aid","data","office","stole","howard","tyrone","hankerson","student-employee","twitter","news","google","want","information"]

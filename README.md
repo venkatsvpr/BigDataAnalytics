@@ -17,6 +17,3 @@ Part2 - Contains the part-2 of the project
     |--- GetAndDumpContent.py - Scrapes the content from the links obtained from the Json.
 |--- Twitter - Contains twitter data collected using twitteR API
 |--- Visualization - Contains the data and display for visualization.
-
-
-
