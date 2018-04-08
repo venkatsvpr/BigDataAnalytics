@@ -1,11 +1,11 @@
 
 function load_data()
 {
-  alert("called");
+  //alert("called");
   var file1="";
   var file2="";
   var pick = document.getElementById("pick").value;
-  console.log("Value is : " + pick);
+  //console.log("Value is : " + pick);
   document.getElementById("word-cloud-NY").innerHTML ="";
   document.getElementById("word-cloud-TR").innerHTML ="";
 
@@ -13,7 +13,7 @@ function load_data()
   {
 
       case "facebook":
-                     file1="india_NY.txt";
+                     file1="facebook_NY.txt";
                      file2="facebook_TR.txt";                      
                       break;
       case "india":
@@ -22,70 +22,80 @@ function load_data()
                       break;
       case "trump":
                       file1="trump_NY.txt";
-                      file2="trump_TR.txt";
-                      break;
-      case "select":
-                      file1="NA";
-                      file2="NA";
+                      file2="trump_TR.txt";     
   }
-  console.log("line2")
+ // console.log("line2")
 
   var width = 400,
   height = 400,
-  show_data = 13;
+  show_data = document.getElementById("count").value,
+  max = 30;
 
-  var leaderscale = d3.scaleLinear().range([20,30]);
+  if(show_data==25)
+      var leaderscale = d3.scaleLinear().range([8,25]);
+
+  else if(show_data==30)
+      var leaderscale = d3.scaleLinear().range([1,20]);
+
+  else if(show_data==10)
+    var leaderscale = d3.scaleLinear().range([15,25]);
+
+  else
+     var leaderscale = d3.scaleLinear().range([10,25]);
+
   var leaders = [];
   var leaders1 = [];
   var fill = d3.scaleOrdinal(d3.schemeCategory10);
 
   d3.tsv("./data/" + file1, function(data){
 
-    leaders.push({text: data.Word, size: data.Freq});
-    //console.log(leaders)
-
+    leaders.unshift({text: data.Word, size: data.Freq});
     leaderscale.domain([
         d3.min(leaders,function(d) {return d.size;}),
         d3.max(leaders,function(d) {return d.size;})        
-      ]);    
+      ]);
 
-    //console.log(leaders.length);
-    if(leaders.length==show_data)
-    {      
+    if(leaders.length==max)
+    {     
+
+      console.log(leaders);
+
         layout = d3.layout.cloud()
       .size([width, height])
-      .words(leaders)
+      .words(leaders.slice(0,show_data))
       .padding(2)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .font("Impact")
-      .fontSize(function(d) { return leaderscale(d.size); })
+      .fontSize(function(d) { return (leaderscale(d.size-(max-show_data))); })
       .on("end", draw);
- 
-    layout.start();  
+
+      layout.start();
     }
-        
+
+
   }); 
 
   d3.tsv("./data/" + file2, function(data){
 
-    leaders1.push({text: data.Word, size: data.Freq});
+    leaders1.unshift({text: data.Word, size: data.Freq});
 
-   // console.log(leaders1)
+    //console.log(leaders1)
 
     leaderscale.domain([
         d3.min(leaders1,function(d) {return d.size;}),
         d3.max(leaders1,function(d) {return d.size;})        
       ]);    
 
-    if(leaders1.length==show_data)
+    if(leaders1.length==max)
     {      
+      console.log(leaders1);
         layout = d3.layout.cloud()
       .size([width, height])
-      .words(leaders1)
+      .words(leaders1.slice(0,show_data))
       .padding(2)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .font("Impact")
-      .fontSize(function(d) { return leaderscale(d.size); })
+      .fontSize(function(d) { return leaderscale(d.size-(max-show_data)); })
       .on("end", draw1);
  
     layout.start();  
@@ -94,7 +104,7 @@ function load_data()
   }); 
 
   function draw(words) {
-    console.log("In draw")
+   // console.log("In draw")
 
   d3.select("#word-cloud-NY").append("svg")
       .attr("width", layout.size()[0])
@@ -115,7 +125,8 @@ function load_data()
   }
 
   function draw1(words) {
-console.log("In draw1")
+  
+  //console.log("In draw1")
   d3.select("#word-cloud-TR").append("svg")
       .attr("width", layout.size()[0])
       .attr("height", layout.size()[1])

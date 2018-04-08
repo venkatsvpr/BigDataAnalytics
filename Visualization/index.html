@@ -13,12 +13,21 @@
       <span class="label label-primary">Big Data Visualization : </span>
       
 
-      <select id="pick" name="pick" onchange="load_data()">
-        <option value="select">Select Data</option>
+      <select id="pick" name="pick">
         <option value="facebook">Facebook</option>
         <option value="india">India</option>
         <option value="trump">Trump</option>       
       </select>  
+
+      <select id="count" name="count">
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>              
+      </select>  
+
+      <button id="submit" class="btn btn-primary btn-sm" onclick="load_data()"> Show Results </button>
+
     </div>
     <br>
     <div class="container">     
