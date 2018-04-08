@@ -1,25 +1,22 @@
 <html>
   <head>
     <title>Word Cloud</title>
-    <link rel="icon" href="favi.png">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/index.css"> 
+    <link rel="icon" href="favi.png">
   </head>
   <body>
 
     <div class="container">
       <br>
-      <span class="label label-primary"> <b>Select Phrase/Word-Count : </b></span>
+      <span class="label label-primary"> <b>Co-Occurence For Facebook </b></span>
+      <br><br>
+      <span class="label label-primary"> <b>Select Count </b></span>
       
-
-      <select id="pick" name="pick">
-        <option value="facebook">Facebook</option>
-        <option value="india">India</option>
-        <option value="trump">Trump</option>               
-      </select>  
-
+      
       <select id="count" name="count">
         <option value="10">10</option>
         <option value="15">15</option>
@@ -28,7 +25,9 @@
       </select>  
 
       <button id="submit" class="btn btn-primary btn-sm" onclick="load_data()"> Show Results </button>
-      <button id="submit" class="btn btn-primary btn-sm" style="float: right;margin-right: 130px" onclick="window.location.replace('coocur.html');"> Proceed to Co-Occurence </button>
+
+         <button id="submit" class="btn btn-primary btn-sm" style="float: right;margin-right: 130px" onclick="window.location.replace('index.html');"> Back </button>
+
 
     </div>
     <br>
@@ -45,6 +44,6 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/d3.layout.cloud.js"></script>
-    <script src="js/medley.js"></script>
+    <script src="js/medley_co.js"></script>
   </body>
 </html>

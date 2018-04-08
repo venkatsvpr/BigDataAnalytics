@@ -2,30 +2,14 @@
 function load_data()
 {
   //alert("called");
-  var file1="";
-  var file2="";
-  var pick = document.getElementById("pick").value;
+  
+  file1="co_facebook_NY.txt";
+  file2="co_facebook_TR.txt";
+
   //console.log("Value is : " + pick);
   document.getElementById("word-cloud-NY").innerHTML ="";
   document.getElementById("word-cloud-TR").innerHTML ="";
 
-  switch(pick)
-  {
-
-      case "facebook":
-                     file1="facebook_NY.txt";
-                     file2="facebook_TR.txt";                      
-                      break;
-      case "india":
-                      file1="india_NY.txt";
-                      file2="india_TR.txt";                      
-                      break;
-      case "trump":
-                      file1="trump_NY.txt";
-                      file2="trump_TR.txt"; 
-                      break;                         
-
-  }
  // console.log("line2")
 
   var width = 400,
@@ -35,7 +19,10 @@ function load_data()
 
 
   if(show_data==25)
-      var leaderscale = d3.scaleLinear().range([8,25]);
+      var leaderscale = d3.scaleLinear().range([10,15]);
+
+  else if(show_data==20)
+    var leaderscale = d3.scaleLinear().range([10,20]);
 
   else if(show_data==10)
     var leaderscale = d3.scaleLinear().range([15,25]);
