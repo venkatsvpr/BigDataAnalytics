@@ -1,6 +1,6 @@
 # BigDataAnalytics
 Bigdata Analytics with MapReduce
-
+This is done as a part of CSE 587 - Data Intensive Computing
 
 #Directory Structures:
 Part1 - Contains the part-1 of the project.<br />
